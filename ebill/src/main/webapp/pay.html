@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Payment Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background-color: #f2f2f2;
+		}
+
+		.container {
+			margin: auto;
+			max-width: 600px;
+			padding: 20px;
+			background-color: white;
+			box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+
+		h1 {
+			text-align: center;
+			color: #121528;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+			color: #333;
+		}
+
+		input[type=text], input[type=password] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+
+		input[type=submit] {
+			background-color: #0016d7;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			float: right;
+		}
+
+		input[type=submit]:hover {
+			background-color: #0016d7;
+		}
+
+		.cancelbtn {
+			width: auto;
+			padding: 10px 18px;
+			background-color: #0016d7;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			float: left;
+		}
+
+		.cancelbtn:hover {
+			background-color: #0016d7;
+		}
+
+		.clearfix::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+
+		@media screen and (max-width: 600px) {
+			input[type=submit] {
+				width: 100%;
+				margin-top: 0px;
+			}
+			.cancelbtn {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Payment Page</h1>
+		<form action="verify4" method="post">
+			<label for="card_number">Card Number:</label>
+			<input type="text" id="card_number" name="cno" placeholder="Enter your card number" required>
+			<label for="expiry_date">Expiry Date:</label>
+			<input type="text" id="expiry_date" name="edate" placeholder="MM/YY" required>
+			<label for="cvv">CVV:</label>
+			<input type="password" id="cvv" name="cvv" placeholder="Enter CVV" required>
+			<label for="name_on_card">Name on Card:</label>
+			<input type="text" id="name_on_card" name="name_on_card" placeholder="Enter the name on the card" required>
+			<label for="amount">Amount:</label>
+			<input type="text" id="amount" name="amt" placeholder="Enter amount" required>
+			<div class="clearfix">
+				<button type="submit" class="cancelbtn">Pay</button>
